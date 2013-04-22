@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>online shopping cart</title>
+<script type="text/javascript" src="jquery.js"></script>
+<style type="text/css">
+@import url(css.css);
+</style>
+<script type="text/javascript" src="js.js"></script>
+ </head>
+
+ <body>
+    <div id="wrapper">
+    <h1>ajax ... nettuts</h1>
+    <ul id="nav">
+        <li><a href="index.html">welcome</a></li>
+        <li><a href="policies.html">Our Policies</a></li>
+        <li><a href="login.html">login</a></li>
+        <li><a href="contactus.html">contact us</a></li>
+		<li><a href="admin.html">admin</a></li>
+    </ul>
+    <div id="content">
+        <h2>admin login</h2>
+        <div align="center"><p>You need to be an administrator to log in </p></div>
+		<div align="center"><form action="admin_home.php" method="POST" >
+   <table><tr><td><p>User id:</p></td> 
+   <td> <input type="text" name="user"></td></tr>
+   <tr><td><p>password:</p></td>
+   <td> <input type="password" name="password"></td></tr>
+   <tr><td></td><input type="submit" name="submit" value="Login"></tr>
+   </table> </form>
+     </div>
+	 </div>
+    <div id="foot">Copyright © 2010 All Rights Reserved</div>
+	
+var gallery2 = new slideGallery($$("div.gallery")[1], {
+		steps: 1,
+		autoplay: true,
+		duration: 2000,
+		speed: 300,
+		paging: true,
+		onStart: function(current, visible, length) {
+			$$("span.info")[0].innerHTML = parseInt(current+1) + "-" + parseInt(visible+current) + " from " + length;
+		},
+		onPlay: function(current, visible, length) {
+			$$("span.info")[0].innerHTML = parseInt(current+1) + "-" + parseInt(visible+current) + " from " + length;
+		}
+	});
+    </div>
+    
+</body>
+</html>

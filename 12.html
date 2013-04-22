@@ -1,0 +1,156 @@
+<html>
+<head>
+
+<title>Online Auctioning Portal</title>
+<script type="text/javascript" src="jquery.js"></script>
+<style type="text/css">
+@import url(css.css);
+</style>
+<LINK REL="SHORTCUT ICON"
+       HREF="./images/logo.ico">
+	    <link rel="stylesheet" type="text/css" href="demo.css" />
+
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="jscookmenu.js"></script>
+<link rel="stylesheet" href="./ThemeOrange/theme.css" type="text/css">
+<script type="text/javascript" src="./ThemeOrange/theme.js"></script>
+
+
+
+
+<div id="wb_JavaScript1" style="position:absolute;left:200px;top:0px;width:492px;height:47px;z-index:2;" align="left">
+<div style="color:#FFFFFF;font-size:48px;font-family:Salina;" id="jumpx"></div>
+<script type="text/javascript" src="js.js"></script>
+
+<script type="text/javascript">
+        var GB_ROOT_DIR = ".//greybox//";
+    </script>
+
+    <script type="text/javascript" src="greybox/AJS.js"></script>
+    <script type="text/javascript" src="greybox/AJS_fx.js"></script>
+    <script type="text/javascript" src="greybox/gb_scripts.js"></script>
+    <link href="greybox/gb_styles.css" rel="stylesheet" type="text/css"  />
+	
+	
+	
+
+</head>
+<body>
+ 
+    <div id="wrapper">
+    <h1>ajax ... nettuts</h1>
+    <ul id="nav">
+        <li><a href="index.html">welcome</a></li>
+        <li><a href="policies.html">Our Policies</a></li>
+        <li><a href="login.html">login</a></li>
+        <li><a href="contactus.html">contact us</a></li>
+		<li><a href="admin.html">admin</a></li>
+    </ul>
+    <div id="content">    	
+        <h2>Welcome!</h2>
+        <div id="content1"><p>Welcome to Online Auctioning Portal .</p><p>
+A internet hub page that you can bid on  goods like  electronics goods, antiques and paintings .<p>  hope you can find everything you need here</p></div>
+    </div>
+    <div id="foot">Copyright © 2011 WBD project IT-2</div>
+	
+</div>
+
+<script type="text/javascript">
+message=".....BID BID BOOM.....";
+mes=new Array();
+mes[0]=-1;
+mes[1]=-4;
+mes[2]=-7;
+mes[3]=-10;
+mes[4]=-7;
+mes[5]=-4;
+mes[6]=-1;
+num=0;
+num2=0;
+txt="";
+
+function jump0()
+{
+   if (message.length > 6)
+   {
+      for(i=0; i!=message.length; i++)
+      {
+         txt = txt + "<span style='position:relative;' id='n"+i+"'>"+message.charAt(i)+"</span>";
+      }
+      jump = document.getElementById("jumpx");
+      jump.innerHTML = txt;
+      txt = "";
+      jump1a();
+   }
+}
+
+function jump1a()
+{
+   nfinal = document.getElementById("n0");
+   nfinal.style.left = (-num2).toString() + "px";
+   if (num2 != 9)
+   {
+      num2 = num2 + 3;
+      setTimeout("jump1a()", 50);
+   }
+   else
+   {
+      jump1b();
+   }
+}
+
+function jump1b()
+{
+   nfinal = document.getElementById("n0");
+   nfinal.style.left = (-num2).toString() + "px";
+   if (num2 != 0)
+   {
+      num2 = num2-3;
+      setTimeout("jump1b()",50);
+   }
+   else
+   {
+      jump2();
+   }
+}
+
+function jump2()
+{
+   txt = "";
+   for(i=0;i != message.length; i++)
+   {
+      if (i+num > -1 && i+num < 7)
+      {
+         txt = txt + "<span style='position:relative;top:" + mes[i+num] + "px'>" + message.charAt(i) + "</span>";
+      }
+      else
+      {
+         txt = txt + "<span>" + message.charAt(i) + "</span>";
+      }
+   }
+   jump = document.getElementById("jumpx");
+   jump.innerHTML = txt;
+   txt = "";
+   if (num != (-message.length))
+   {
+      num--;
+      setTimeout("jump2()",50);
+   }
+   else
+   {
+      num=0;
+      setTimeout("jump0()",50);
+   }
+}
+jump0();
+</script></div>
+
+<img src="images/auction-icon-thumb3424582.jpg" id="SlideShow1" border="0" align="top" alt="" width="156" height="159" name="SlideShow1">
+
+
+
+</div>
+</body>
+</html>

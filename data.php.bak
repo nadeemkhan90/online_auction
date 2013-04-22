@@ -1,0 +1,84 @@
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<link type = "text/css"
+rel = "stylesheet"
+href = "sheet.css">
+</head>
+<body>
+<body style="background-color:MediumTurquoise ">
+<img src="1.jpg">
+<h1>company</h1>
+<p>
+<?php
+$flag =0;
+$Id = filter_input(INPUT_GET, "user");
+$pass = filter_input(INPUT_GET, "password");
+
+$conn = mysql_connect("localhost", "root") or die (mysql_error());
+mysql_select_db("my_auction", $conn);
+$sql = "(SELECT `UserId` 
+FROM `my_auction`.`user`)";
+$result = mysql_query($sql, $conn) or die(mysql_error());
+while($row = mysql_fetch_assoc($result)){
+foreach ($row as $name => $value){
+if($Id==$value)
+$flag =1;
+} // 
+} 
+if($flag==1){
+$sql2 = "(SELECT `password`
+FROM `my_auction`.`user`
+WHERE `UserId` LIKE '$Id')";
+$result = mysql_query($sql2, $conn) or die(mysql_error());
+while($row = mysql_fetch_assoc($result)){
+foreach ($row as $name => $value){
+if($pass==$value)
+$flag =1;
+else
+$flag =0;
+} 
+} 
+if($flag==1){
+$sql3  = "(SELECT `post`
+FROM `my_auction`.`user`
+WHERE `
+`UserId` LIKE '$Id')";
+$result = mysql_query($sql3, $conn) or die(mysql_error())
+;
+while($row = mysql_fetch_assoc($result)){
+foreach ($row as $name => $value){
+if($value=="seller")
+$flag =1;
+else
+$flag =0;
+} 
+} 
+if ($flag==1)
+
+{
+print "Since you have a seeler so <br/><h3>you can<ul>
+<li><a href = \"insert.php\"> insert employee</li>
+<li><a href = \"delete.php\">delete employee</li>
+<li><a href = \"search.php\">search employee</li>
+</ul> ";
+}
+else
+
+{
+print "sorry! you can not insert or delete employees</br> but as a employee u can <a href= \"search.php\">search</a> for others";
+}
+
+/*else
+{
+print "<h3>passworrd is wrong!!</h3>";
+}
+else
+
+{
+print "<h3>the Id does not exist!!</h3>";
+}*/
+?>
+</p>
+</body>
+</html>
